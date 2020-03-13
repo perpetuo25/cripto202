@@ -8,7 +8,7 @@ package hill;
 
 /**
  *
- * @author ramo_
+ *  @author Eric Sanchez Sarmiento, Fernando Altamirano, Tania 
  */
 public class matrices {
    
