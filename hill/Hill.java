@@ -13,17 +13,40 @@ package hill;
  */
 public class Hill {
     
-    public static String encripta(String texto, String llave){
+    public static String encrip3x3(String texto, String llave){
         String cifrado;
         int[] keyArr = Alphabet.textToIndex(llave);
         int[] text = Alphabet.textToIndex(texto);
-        if(keyArr.length != 4)
-            return "La clave debe ser de longitun 4";
-        int [][] clave = matrices.matrix(keyArr,2,2);
-        int [][] mensaje = matrices.matrix(text,text.length/2,2);
+        int div = text.length /3;
+        int [][] clave = matrices.matrix(keyArr,3,3);
+        int [][] mensaje = matrices.matrix(text,div,3);
             cifrado = matrices.getCifrado(matrices.multiplicaMatrices(clave, mensaje));
             return cifrado;
+            
         }
+    public static String encrip2x2(String texto, String llave){
+        String cifrado;
+        int[] keyArr = Alphabet.textToIndex(llave);
+        int[] text = Alphabet.textToIndex(texto);
+        int div = text.length /2;
+        int [][] clave = matrices.matrix(keyArr,2,2);
+        int [][] mensaje = matrices.matrix(text,div,2);
+            cifrado = matrices.getCifrado(matrices.multiplicaMatrices(clave, mensaje));
+            return cifrado;
+            
+        }
+    public static String encriptaHill(String texto, String llave){
+        int[] keyArr = Alphabet.textToIndex(llave);
+        if(keyArr.length == 9){
+            return encrip3x3(texto,llave);
+        }else{
+            if(keyArr.length == 4)
+                return encrip2x2(texto, llave);
+    }
+        return "La clave debe ser de tamaño 4 o 9";
+    }
+    
+   
             
     
 
@@ -41,16 +64,23 @@ public class Hill {
       
       int[][] cif = matr.multiplicaMatrices(keys,ene);
       System.out.println(getCifrado(cif));
-     */
-      String ciff = encripta("CONSUL","HOLA");
-      System.out.println(ciff);
      
-      int[] det = {-1,-2,2,2};
-      int[][] f= matrices.matrix(det, 2, 2);
-      double deter = matrices.determinante(f);
-      System.out.println(deter);
+      String ciff = encriptaHill("CONSULTAR","FORTALEZA");
+      String ciff2 = encriptaHill("CONSUL","HOLA");
+      System.out.println(ciff);
+       System.out.println(ciff2);
     
+      int[] keyArr = Alphabet.textToIndex("HOLA");
+      double[][] mult = matrices.inversa2x2(matrices.matrix(keyArr, 2, 2));
       
+      int [][] mensaje = matrices.matrix(Alphabet.textToIndex("WVYIOO"),3,2);
+      double[][] rest = matrices.multiplicaMatricesdo(mult, mensaje);
+      matrices.imprimeMatriz(rest);
+     */
+        double x = -143;
+        double y = 4295;
+        double mod = (x/y) % 27;     
+        System.out.println(mod);
       
        
     }
