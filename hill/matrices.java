@@ -55,9 +55,9 @@ public class matrices {
         return mult;
     }
    /**
-    * Metodo para transformar la matriz 
+    * Metodo para transformar la matriz a texto
     * @param matrizCifrada
-    * @return 
+    * @return una cadena cifrada
     */
     public static String getCifrado(int[][] matrizCifrada){
         String mesCif = "";
