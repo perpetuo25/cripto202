@@ -9,7 +9,9 @@ package hill;
 
 /**
  *
- *  @author Eric Sanchez Sarmiento, Fernando Altamirano, Tania 
+ *  @author Eric Sanchez Sarmiento 314347440
+ , Jesus Fernando Altamirano Vazquez 314340056, 
+ Tania Michelle Rubi Rojas 315121719
  */
 public class Hill {
     /**
@@ -143,8 +145,12 @@ public class Hill {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         /**
          * Aquí se imprimen los mensajes
+         Eric Sanchez Sarmiento 314347440
+ 		 Jesus Fernando Altamirano Vazquez 314340056, 
+		 Tania Michelle Rubi Rojas 315121719
          */
       
       System.out.println("Encriptado de 2x2");
